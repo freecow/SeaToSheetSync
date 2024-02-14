@@ -1,0 +1,4 @@
+seatable-api
+openpyxl
+pandas
+python-dotenv
