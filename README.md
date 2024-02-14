@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ### `.env` 文件
 
-将你的敏感信息如Seatable的`server_url`和`api_token`，以及MySQL的连接参数放在`.env`文件中。示例内容如下：
+将你的敏感信息如Seatable的`server_url`和`api_token`放在`.env`文件中。示例内容如下：
 
 ```plaintext
 SEATABLE_SERVER_URL=https://cloud.seatable.cn
@@ -38,6 +38,7 @@ SEATABLE_API_TOKEN=your_api_token_here
 ```
 
 确保`.env`文件不被提交到版本控制系统中（比如通过`.gitignore`）。
+
 SEATABLE_API_TOKEN请参考Seatable官方开发文档。
 
 ### `config.json` 文件
@@ -51,9 +52,9 @@ SEATABLE_API_TOKEN请参考Seatable官方开发文档。
   "sheet_name": "Excel表名",
   "relation_field": "关联字段名称",
   "field_mappings": {
-    "列名1": 关联字段对应Excel Sheet中的列数,
-    "列名2": 需填充字段对应Excel Sheet中的列数,
-    "列名3": 需填充字段对应Excel Sheet中的列数
+    "列名1": "关联字段对应Excel Sheet中的列数",
+    "列名2": "需同步字段对应Excel Sheet中的列数",
+    "列名3": "需同步字段对应Excel Sheet中的列数"
     ...
   }
 }
@@ -61,17 +62,17 @@ SEATABLE_API_TOKEN请参考Seatable官方开发文档。
 
 ### 示例
 
-通过合同编号关联字段，填充Excel表中的下游领域细化列，`合同编号`位于该Sheet的第19列，`下游领域`细化位于该Sheet的第37列。
+通过`合同编号`关联字段，填充Excel表中的`下游领域细化`列，`合同编号`位于该Sheet的第19列，`下游领域细化`位于该Sheet的第37列。
 
 ```json
 {
   "table_name": "收入成本大表",
-  "excel_file_path": "test1.xlsx",
-  "sheet_name": "收入成本大表",
+  "excel_file_path": "test.xlsx",
+  "sheet_name": "收入成本",
   "relation_field": "合同编号",
   "field_mappings": {
-    "合同编号": 19,
-    "下游领域细化": 37
+    "合同编号": 1,
+    "下游领域细化": 4
   }
 }
 ```

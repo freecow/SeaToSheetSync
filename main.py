@@ -1,5 +1,3 @@
-# pip install pandas seatable-api
-# pip install python-dotenv
 import json
 from seatable_api import Base
 from openpyxl import load_workbook
@@ -16,7 +14,7 @@ mysql_config = {
     'port': int(os.getenv('MYSQL_PORT')),  # 确保转换为正确的类型
     'user': os.getenv('MYSQL_USER'),
     'password': os.getenv('MYSQL_PASSWORD'),
-    'db': os.getenv('MYSQL_DB')  # 假设你在 .env 中也定义了 MYSQL_DB
+    'db': os.getenv('MYSQL_DB')
 }
 
 seatable_config = {
@@ -30,8 +28,6 @@ with open('config.json', 'r') as f:
     other_config = json.load(f)
 
 # 从配置文件获取配置信息
-#server_url = config['SERVER_URL']
-#api_token = config['TEST_TOKEN']
 table_name = other_config['table_name']
 excel_file_path = other_config['excel_file_path']
 sheet_name = other_config['sheet_name']

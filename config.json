@@ -1,6 +1,6 @@
 {
   "table_name": "收入成本大表",
-  "excel_file_path": "test.xlsx",
+  "excel_file_path": "memo.xlsx",
   "sheet_name": "收入成本",
   "relation_field": "合同编号",
   "field_mappings": {
