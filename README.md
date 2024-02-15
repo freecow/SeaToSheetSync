@@ -8,6 +8,7 @@ SeaToSheetSync is a Python tool designed to seamlessly sync data from SeaTable t
 - **自动数据同步**：从Seatable云端自动提取数据并填充到Excel。
 - **配置驱动**：通过简单的JSON配置，定制化需同步的数据字段。
 - **安全性**：敏感信息如数据库凭证、API密钥等存放在`.env`文件，避免硬编码。
+- **松耦合**：将业务逻辑放在JSON配置文件中，不同的需求采用不同的配置文件。
 
 ## 安装
 
